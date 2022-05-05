@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "membros",
+  "info": {
+    "singularName": "membro",
+    "pluralName": "membros",
+    "displayName": "Membro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "morada": {
+      "type": "string"
+    },
+    "contacto": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "sexo": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "F"
+      ]
+    },
+    "data_nascimento": {
+      "type": "date"
+    },
+    "congregacao": {
+      "type": "string"
+    },
+    "foto": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "funcao": {
+      "type": "string"
+    },
+    "activo": {
+      "type": "enumeration",
+      "enum": [
+        "Sim",
+        "Não"
+      ]
+    },
+    "casado": {
+      "type": "enumeration",
+      "enum": [
+        "Sim",
+        "Não"
+      ]
+    },
+    "batizado": {
+      "type": "enumeration",
+      "enum": [
+        "Sim",
+        "Não"
+      ]
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "sector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sector.sector",
+      "inversedBy": "membros"
+    }
+  }
+}

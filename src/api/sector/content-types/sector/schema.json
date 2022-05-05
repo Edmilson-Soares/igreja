@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sectors",
+  "info": {
+    "singularName": "sector",
+    "pluralName": "sectors",
+    "displayName": "Sector",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "local": {
+      "type": "string"
+    },
+    "cantacto": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "responsaveis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membro.membro",
+      "mappedBy": "sector"
+    },
+    "membros": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membro.membro",
+      "mappedBy": "sector"
+    },
+    "novo_convertidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::novo-convertido.novo-convertido",
+      "mappedBy": "sector"
+    },
+    "actividades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::actividade.actividade",
+      "mappedBy": "sector"
+    },
+    "reuniaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::reuniao.reuniao",
+      "mappedBy": "sector"
+    },
+    "seminarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::seminario.seminario",
+      "mappedBy": "sector"
+    }
+  }
+}

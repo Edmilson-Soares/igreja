@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "novo_convertidos",
+  "info": {
+    "singularName": "novo-convertido",
+    "pluralName": "novo-convertidos",
+    "displayName": "Novo Convertido"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "morada": {
+      "type": "string"
+    },
+    "contacto": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "sexo": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "S"
+      ]
+    },
+    "data_nascimento": {
+      "type": "date"
+    },
+    "foto": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "evento_conversao": {
+      "type": "enumeration",
+      "enum": [
+        "Culto (Sede)",
+        "Semana de Evangelização",
+        "Hospital",
+        "Saida de Evangelização",
+        "Outros"
+      ]
+    },
+    "sector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sector.sector",
+      "inversedBy": "novo_convertidos"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seminarios",
+  "info": {
+    "singularName": "seminario",
+    "pluralName": "seminarios",
+    "displayName": "Seminário"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tema": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "data_inicio": {
+      "type": "date"
+    },
+    "data_fim": {
+      "type": "date"
+    },
+    "anexos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "sector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sector.sector",
+      "inversedBy": "seminarios"
+    }
+  }
+}
